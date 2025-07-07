@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>  
+
+  <div class="main-wrapper">
+    <img src="Elements\static2.gif" class="main-img" alt="portfolio design" />
+
+    <!-- <div class="window-controls">
+      <img src="Elements/minimise.png" class="control-btn" alt="" id="mini">
+      <img src="Elements/fullscreen.png" class="control-btn" alt="">
+      <img src="Elements/close.png" class="control-btn" alt="">
+    </div>
+
+    <div class="popup-controls">
+      <img src="Elements/close.png" class="popup-close" alt="">
+    </div> --> 
+
+    <img src="Elements/sunflower.png" alt="Sunflower" class="sunflower-rotate" />
+    <img src="Elements/yes.png" class="yes-button" onclick="goToNextPage()" />
+
+    <div class="nope-wrapper">
+      <img src="Elements/nope.png" class="nope-button" />
+    </div>
+
+    <img src="Elements/rainbow.png" alt="Rainbow" class="rainbow-left" />
+    <img src="Elements/flower.png" alt="Flower" class="flower-right" />
+  </div>
+
+  <div id="video-screen" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: black; z-index: 9998;">
+    <video id="transition-video" src="Elements/transition.mov" autoplay muted playsinline style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: 9999;"></video>
+  </div>
+
+
+<!-- Static freeze frame after video
+<div id="freeze-frame" style="display: none; position: fixed; top: 0; left: 0; height: 100vh; width: 100vw; background: black; z-index: 10000; justify-content: center; align-items: center;">
+  <img src="Elements/Portfolio.png" style="width: 100%; height: 100%; object-fit: cover;" />
+</div> -->
+
+<!-- Fade to dark background -->
+<div id="fade-dark" style="display: none; position: fixed; top: 0; left: 0; height: 100vh; width: 100vw; background-image: url('Elements/Portfolio dark.png'); background-size: cover; background-position: center; z-index: 10001; opacity: 0;"></div>
+
+<!-- Slide-in final.html -->
+<div id="final-container" style="position: fixed; top: -100%; left: 50%; transform: translateX(-50%); width: 100vw; height: 100vh; z-index: 10002; opacity: 0; transition: all 1s ease;">
+  <iframe src="final.html" style="width: 100%; height: 100%; border: none;"></iframe>
+</div>
+
+
+<script>
+  const yesBtn = document.querySelector('.yes-button');
+  const videoScreen = document.getElementById('video-screen');
+  const videoPlayer = document.getElementById('transition-video');
+
+  yesBtn.addEventListener('click', () => {
+    // Show the video container and start playback
+    videoScreen.style.display = 'flex';
+    videoPlayer.play();
+
+    videoPlayer.onended = () => {
+      // Step 1: Directly show the dark background image
+      const darkOverlay = document.createElement('div');
+      darkOverlay.style.position = 'fixed';
+      darkOverlay.style.top = '0';
+      darkOverlay.style.left = '0';
+      darkOverlay.style.width = '100vw';
+      darkOverlay.style.height = '100vh';
+      darkOverlay.style.backgroundImage = "url('Elements/Portfolio dark.png')";
+      darkOverlay.style.backgroundSize = 'cover';
+      darkOverlay.style.backgroundPosition = 'center';
+      darkOverlay.style.backgroundRepeat = 'no-repeat';
+      darkOverlay.style.opacity = '0';
+      darkOverlay.style.transition = 'opacity 1s ease';
+      darkOverlay.style.zIndex = '10001';
+
+      document.body.appendChild(darkOverlay);
+
+      // Trigger fade-in on next paint frame
+      requestAnimationFrame(() => {
+        darkOverlay.style.opacity = '1';
+      });
+
+      // Step 2: After fade completes, redirect to final.html
+      setTimeout(() => {
+        window.location.href = 'final.html';
+      }, 200); // 1s fade-in + 0.2s buffer
+    };
+  });
+</script>
+
+
+
+
+
+
+
+
+  
+
+
+</body>
+</html> 

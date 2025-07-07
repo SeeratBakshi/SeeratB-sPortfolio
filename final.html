@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Explorer Style Tabs</title>
+  <link rel="stylesheet" href="final.css">
+</head>
+<body class="slide-wrapper"> 
+
+  
+  <div class="main-box">
+    <div class="tab-wrapper"> 
+      <div class="tab active" data-tab="about">About ME</div>
+      
+        <div class="tab" data-tab="graphics">Graphics</div>
+      
+      <div class="tab" data-tab="uiux">UI / UX</div>
+      <div class="tab" data-tab="frt">Front End Dev</div>
+      <div class="tab" data-tab="cnt">Contact ME</div> 
+    </div>
+    <div class="connector"></div>
+
+    <div class="tab-content">
+      <div class="content active" id="about">
+        <div class="image-wrapper">
+          <img src="About meee.png" alt="About Me" class="about-img" />
+        </div>
+      </div>
+     
+     
+      <div class="content active" id="cnt">
+        <div class="image-wrapper">
+          <img src="Contactt2.png" alt="About Me" class="cnt-img" />
+
+          <div class="contact-links">
+      <div class="link-item email"> seeratbakshii@gmail.com </div>
+      <div class="link-item behance">
+        <a href="https://www.behance.net/seeratbakshi" target="_blank"> Behance </a> 
+      </div>
+      <div class="link-item linkedin">
+        <a href="https://www.linkedin.com/in/seerat-bakshi-5bb60826b/" target="_blank"> LinkedIn </a> 
+      </div>
+    </div> 
+
+        </div>
+      </div>
+      
+      <div class="content" id="graphics">
+        <div class="folder-grid">
+          <div class="folder-item" data-img="Social media page.png">
+            <img src="folder.png" alt="Social Media Folder" />
+            <div class="label first-label">SOCIAL MEDIA</div>
+          </div>
+          <div class="folder-item" data-img="POSTER PAGE2.jpg">
+            <img src="folder.png" alt="Posters Folder" />
+            <div class="label">POSTERS</div>
+          </div>
+          <div class="folder-item" data-img="BANNER PAGE.png">
+            <img src="folder.png" alt="Banners Folder" />
+            <div class="label">BANNERS</div>
+          </div>
+          <div class="folder-item" data-img="DESIGN PAGE2.jpg">
+            <img src="folder.png" alt="Design Folder" />
+            <div class="label">DESIGN</div>
+          </div>
+        </div>
+        <div id="design-preview" class="image-viewer hidden">
+          <button id="graphics-close" class="close-button">×</button>
+          <div class="scroll-img-container">
+            <img id="big-image" src="" alt="Preview" /> 
+          </div>
+        </div>
+      </div>
+
+      <div class="content" id="uiux">
+        
+         <div class="folder-grid">
+          <div class="folder-item" data-img="mayb.png">
+            <img src="folder.png" alt="Maybelline Folder" />
+            <div class="label first-label">MAYBELLINE</div>
+          </div>
+          <div class="folder-item" data-img="paytmmm.png" id="paytm-folder">
+            <img src="folder.png" alt="Prototype Folder" />
+            <div class="label">PAYTM</div>
+          </div>
+        </div>
+
+        <div id="uiux-preview" class="image-viewer hidden">
+          <button id="uiux-close">×</button>
+          <div class="modal-content-wrapper">
+            <div class="img-circle-container">
+              <img id="uiux-big-image" src="" alt="Preview" class="preview-image" />
+            </div>
+
+            <div class="circle-button-wrapper" id="maybelline-link">
+              <a href="https://www.behance.net/gallery/227857249/Maybelline-Website-Application-Redesign" class="circle-button">
+                <div class="outer-circle">
+                  <span class="click-text">TAP</span>
+                  <div class="orbit-container">
+                    <div class="orbiting-circle"></div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="circle-button-wrapper" id="paytm-link" style="bottom: 22%; left: 88%; display: none;">
+              <a href="https://www.behance.net/gallery/227844621/Paytm-Rebranding" class="circle-button">
+                <div class="outer-circle" style="background-color: white;">
+                  <span class="click-text">TAP</span>
+                  <div class="orbit-container">
+                    <div class="orbiting-circle"></div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div> 
+      </div>
+
+    <div class="content" id="frt">
+  <div class="folder-grid">
+    <div class="folder-item" data-img="amazon-img.png">
+      <img src="folder.png" alt="Amazon Folder" />
+      <div class="label first-label">AMAZON</div>
+    </div>
+    <div class="folder-item" data-img="puma-img.png">
+      <img src="folder.png" alt="Puma Folder" />
+      <div class="label">PUMA</div>
+    </div>
+  </div>
+
+  <div id="frontend-preview" class="image-viewer hidden">
+    <button id="frontend-close" class="close-button">×</button>
+    <div class="scroll-img-container">
+      <img id="frontend-big-image" src="" alt="Preview" />
+
+      <div class="github-footer">
+      Check it out on my github: <a href="https://github.com/SeeratBakshi" target="_blank"> Seerat Bakshi </a>
+    </div>
+    </div>
+    </div>
+    </div> 
+
+
+
+
+      
+      </div>
+    </div>
+  </div> 
+  
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.content');
+  const connector = document.querySelector('.connector');
+
+  function updateConnectorCut(tab) {
+    const tabRect = tab.getBoundingClientRect();
+    const connectorRect = connector.getBoundingClientRect();
+    const left = tabRect.left - connectorRect.left;
+    const width = tabRect.width;
+
+    const pseudo = connector.style;
+    connector.style.setProperty('--cut-left', `${left}px`);
+    connector.style.setProperty('--cut-width', `${width}px`);
+
+    const connectorBefore = document.querySelector('style#connectorCutStyle');
+    if (connectorBefore) connectorBefore.remove();
+
+    const style = document.createElement('style');
+    style.id = 'connectorCutStyle';
+    style.innerHTML = `
+      .connector::before {
+        left: ${left}px;
+        width: ${width}px;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+
+      tab.classList.add('active');
+      const content = document.getElementById(tab.dataset.tab);
+      if (content) content.classList.add('active');
+
+      updateConnectorCut(tab);
+
+      // ✅ NEW: Close any open preview modals
+    const allViewers = document.querySelectorAll(".image-viewer");
+    allViewers.forEach(viewer => {
+      viewer.classList.add("hidden");
+    });
+
+    // ✅ Restore connector + tab visibility if they were hidden by modal
+    connector.style.visibility = "visible";
+    tab.style.visibility = "visible"; 
+
+
+    });
+  });
+
+  window.onload = () => {
+    const activeTab = document.querySelector('.tab.active');
+    if (activeTab) updateConnectorCut(activeTab);
+  };
+
+  const folders = document.querySelectorAll(".folder-item");
+  const viewer = document.getElementById("design-preview");
+  const bigImg = document.getElementById("big-image");
+  const closeBtn = document.getElementById("graphics-close");
+
+  folders.forEach(folder => {
+    folder.addEventListener("click", () => {
+      const imgPath = folder.dataset.img;
+      if (!imgPath) return;
+      bigImg.src = imgPath;
+      viewer.classList.remove("hidden");
+      viewer.classList.add("active"); 
+
+      
+
+      viewer.scrollTop = 0;
+      connector.style.visibility = "hidden";
+      document.querySelector(".tab.active").style.visibility = "hidden"; 
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      viewer.classList.add("hidden");
+      viewer.classList.remove("active");
+      bigImg.src = "";
+      connector.style.visibility = "visible";
+      document.querySelector(".tab.active").style.visibility = "visible";
+    });
+  }
+
+  const uiuxFolders = document.querySelectorAll("#uiux .folder-item");
+  const uiuxViewer = document.getElementById("uiux-preview");
+  const uiuxImg = document.getElementById("uiux-big-image");
+  const uiuxClose = document.getElementById("uiux-close");
+  const maybellineLink = document.getElementById("maybelline-link");
+  const paytmLink = document.getElementById("paytm-link");
+
+  uiuxFolders.forEach(folder => {
+    folder.addEventListener("click", () => {
+      const imgPath = folder.dataset.img || "";
+      if (!imgPath) return;
+      uiuxImg.src = imgPath;
+      uiuxViewer.classList.remove("hidden");
+      uiuxViewer.scrollTop = 0;
+      connector.style.visibility = "hidden";
+      document.querySelector(".tab.active").style.visibility = "hidden";
+
+      if (imgPath.includes("mayb")) {
+        maybellineLink.style.display = "block";
+        paytmLink.style.display = "none";
+      } else if (imgPath.includes("paytm")) {
+        maybellineLink.style.display = "none";
+        paytmLink.style.display = "block";
+      } else {
+        maybellineLink.style.display = "none";
+        paytmLink.style.display = "none";
+      }
+    });
+  });
+
+  if (uiuxClose) {
+    uiuxClose.addEventListener("click", () => {
+      uiuxViewer.classList.add("hidden");
+      uiuxImg.src = "";
+      connector.style.visibility = "visible";
+      document.querySelector(".tab.active").style.visibility = "visible";
+      maybellineLink.style.display = "none";
+      paytmLink.style.display = "none";
+    });
+  }
+
+  const frtFolders = document.querySelectorAll("#frt .folder-item");
+const frtViewer = document.getElementById("frontend-preview");
+const frtImg = document.getElementById("frontend-big-image");
+const frtClose = document.getElementById("frontend-close");
+
+frtFolders.forEach(folder => {
+  folder.addEventListener("click", () => {
+    const imgPath = folder.dataset.img;
+    if (!imgPath || !frtImg || !frtViewer) return;
+    
+    frtImg.src = imgPath;
+    frtViewer.classList.remove("hidden");
+
+    // Safe visibility handling (optional)
+    if (connector) connector.style.visibility = "hidden";
+    const activeTab = document.querySelector(".tab.active");
+    if (activeTab) activeTab.style.visibility = "hidden";
+  });
+});
+
+if (frtClose) {
+  frtClose.addEventListener("click", () => {
+    frtViewer.classList.add("hidden");
+    frtImg.src = "";
+    
+    if (connector) connector.style.visibility = "visible";
+    const activeTab = document.querySelector(".tab.active");
+    if (activeTab) activeTab.style.visibility = "visible";
+  });
+}
+
+</script>
+</body>
+
+</html>      
