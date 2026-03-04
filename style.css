@@ -1,33 +1,34 @@
 * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    html, body {
-      width: 100%;
-      height: 100%;
-      font-family: 'Fira Mono', monospace;
-      overflow: hidden;
-      background-image: url("Elements/Layer4.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-    } 
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Fira Mono', monospace;
+  overflow: hidden;
+  background-image: url("Elements/Layer4.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-    .main-wrapper {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-    }
+.main-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
 
-    .main-img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
+.main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
 
-    /* .window-controls, .popup-controls {
+/* .window-controls, .popup-controls {
       position: absolute;
       display: flex;
       opacity: 0;
@@ -61,88 +62,142 @@
       cursor: pointer;
     } */
 
-    .sunflower-rotate {
-      position: absolute;
-      top: 48%;
-      left: 15%;
-      width: 8%;
-      transition: transform 0.6s ease-in-out;
-      z-index: 5;
-    }
+.sunflower-rotate {
+  position: absolute;
+  top: 48%;
+  left: 15%;
+  width: 8%;
+  transition: transform 0.6s ease-in-out;
+  z-index: 5;
+}
 
-    .sunflower-rotate:hover {
-      transform: rotate(180deg);
-    }
+.sunflower-rotate:hover {
+  transform: rotate(180deg);
+}
 
-    .yes-button {
-      position: absolute;
-      bottom: 12.5%;
-      left: 55%;
-      width: 10%;
-      cursor: pointer;
-      z-index: 5;
-    }
+.yes-button {
+  position: absolute;
+  bottom: 12.5%;
+  left: 55%;
+  width: 10%;
+  cursor: pointer;
+  z-index: 5;
+}
 
-    .nope-wrapper {
-      position: absolute;
-      bottom: 8%;
-      right: 18.8%;
-      width: 10%;
-      height: auto;
-      z-index: 5;
-    }
+.nope-wrapper {
+  position: absolute;
+  bottom: 8%;
+  right: 18.8%;
+  width: 10%;
+  height: auto;
+  z-index: 5;
+}
 
-    .nope-button {
-      width: 100%;
-      transition: opacity 0.3s ease;
-    }
+.nope-button {
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
 
-    .nope-wrapper:hover .nope-button {
-      opacity: 0;
-    }
+.nope-wrapper:hover .nope-button {
+  opacity: 0;
+}
 
-    #mini {
-      width: 20px;
-      height: 5px;
-      position: absolute;
-      top: 40%;
-      right: 155%;
-    }
+#mini {
+  width: 20px;
+  height: 5px;
+  position: absolute;
+  top: 40%;
+  right: 155%;
+}
 
-    .rainbow-left {
-      position: absolute;
-      top: 3%;
-      left: 0;
-      width: 4vw;
-      z-index: 4;
-    }
+.rainbow-left {
+  position: absolute;
+  top: 3%;
+  left: 0;
+  width: 4vw;
+  z-index: 4;
+}
 
-    .flower-right {
-      position: absolute;
-      top: 22%;
-      right: 0;
-      width: 6vw;
-      z-index: 4;
-    }
+.flower-right {
+  position: absolute;
+  top: 22%;
+  right: 0;
+  width: 6vw;
+  z-index: 4;
+}
 
-    @media screen and (max-width: 768px) {
-      .yes-button, .nope-wrapper {
-        width: 20vw;
-      }
+/* ========== Mobile Fallback Banner ========== */
+.mobile-fallback {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  background: #fff8ee;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 28px;
+  box-sizing: border-box;
+}
 
-      .window-controls {
-        right: 5%;
-      }
+.mobile-fallback .mf-badge {
+  display: inline-block;
+  background: #fc8879;
+  color: #fff;
+  font-family: 'DM Serif Display', serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 20px;
+  margin-bottom: 28px;
+}
 
-      .popup-controls {
-        left: 85%;
-      }
+.mobile-fallback h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  color: #3a3a3a;
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
 
-      .flower-right {
-        width: 12vw;
-      }
+.mobile-fallback p {
+  font-family: 'Fira Mono', monospace;
+  font-size: 14px;
+  color: #777;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 340px;
+}
 
-      .sunflower-rotate {
-        width: 15vw;
-      }
-    } 
+.mobile-fallback .mf-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.mobile-fallback .mf-divider {
+  width: 60px;
+  height: 3px;
+  background: #fc8879;
+  border: none;
+  border-radius: 2px;
+  margin: 20px auto 0;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .main-wrapper,
+  #video-screen,
+  #fade-dark,
+  #final-container {
+    display: none !important;
+  }
+
+  .mobile-fallback {
+    display: flex;
+  }
+}
