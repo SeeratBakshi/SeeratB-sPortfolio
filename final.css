@@ -835,6 +835,7 @@ body.slide-wrapper {
   }
 
   .scroll-img-container {
+    padding-top: 40px !important;
     padding-bottom: 60px !important;
   }
 
@@ -857,22 +858,20 @@ body.slide-wrapper {
 
   .close-button, #uiux-close, #frontend-close {
     position: absolute !important;
-    top: 4px !important;
-    right: 4px !important;
-    width: 36px !important;
-    height: 36px !important;
-    background: #fc8879 !important;
-    color: white !important;
-    border: 2px solid black !important;
-    border-radius: 50% !important;
-    font-size: 20px !important;
-    font-weight: bold !important;
+    top: 12px !important;
+    right: 18px !important;
+    width: auto !important;
+    height: auto !important;
+    background: transparent !important;
+    color: #333 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-size: 30px !important;
+    font-weight: normal !important;
     cursor: pointer !important;
     z-index: 999999 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5) !important;
+    display: inline-block !important;
+    box-shadow: none !important;
     opacity: 1 !important;
     visibility: visible !important;
   }
