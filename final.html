@@ -282,8 +282,7 @@
         uiuxImg.src = imgPath;
         uiuxViewer.classList.remove("hidden");
         uiuxViewer.scrollTop = 0;
-        connector.style.visibility = "hidden";
-        document.querySelector(".tab.active").style.visibility = "hidden";
+        uiuxViewer.scrollTop = 0;
 
         if (imgPath.includes("mayb")) {
           maybellineLink.style.display = "block";
@@ -302,8 +301,7 @@
       uiuxClose.addEventListener("click", () => {
         uiuxViewer.classList.add("hidden");
         uiuxImg.src = "";
-        connector.style.visibility = "visible";
-        document.querySelector(".tab.active").style.visibility = "visible";
+        uiuxImg.src = "";
         maybellineLink.style.display = "none";
         paytmLink.style.display = "none";
       });
@@ -322,10 +320,7 @@
         frtImg.src = imgPath;
         frtViewer.classList.remove("hidden");
 
-        // Safe visibility handling (optional)
-        if (connector) connector.style.visibility = "hidden";
-        const activeTab = document.querySelector(".tab.active");
-        if (activeTab) activeTab.style.visibility = "hidden";
+        // Visibility of tabs no longer needs to be toggled since overlay is fixed
       });
     });
 
@@ -334,9 +329,7 @@
         frtViewer.classList.add("hidden");
         frtImg.src = "";
 
-        if (connector) connector.style.visibility = "visible";
-        const activeTab = document.querySelector(".tab.active");
-        if (activeTab) activeTab.style.visibility = "visible";
+        // Visibility of tabs no longer needs to be toggled
       });
     }
 
