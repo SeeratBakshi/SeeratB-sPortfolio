@@ -829,6 +829,12 @@ body.slide-wrapper {
 
   /* Image Viewer overlay styles */
   .image-viewer {
+    width: 94vw !important;
+    height: 94vh !important;
+    border-width: 3px !important;
+  }
+
+  #uiux-preview {
     position: absolute !important;
     width: 100% !important;
     height: 100% !important;
@@ -839,7 +845,7 @@ body.slide-wrapper {
     border-radius: 0 0 10px 10px !important;
   }
 
-  .modal-content-wrapper {
+  #uiux-preview .modal-content-wrapper {
     width: 100% !important;
     height: 100% !important;
     border-radius: 0 0 10px 10px !important;
