@@ -893,26 +893,27 @@ body.slide-wrapper {
 
 @media screen and (max-width: 768px) {
   #about .responsive-img-container, #cnt .responsive-img-container {
-    top: -18%; /* <-- Edit this to move the images (and text) UP or DOWN ONLY on mobile */
+    top: -22%; /* <-- Edit this to move the images (and text) UP or DOWN ONLY on mobile */
   }
   .about-img, .cnt-img {
     top: 0;
   }
 
   .tab-wrapper {
-    padding: 6px 4px 0 4px !important;
-    gap: 4px !important;
+    padding: 6px 2px 0 2px !important;
+    gap: 2px !important;
     display: flex !important;
   }
 
   .tab {
     flex: 1 !important;
     min-width: 0 !important;
-    padding: 6px 2px !important;
+    padding: 6px 1px !important;
     margin-right: 0 !important;
-    font-size: 10.5px !important;
-    letter-spacing: -0.3px !important;
+    font-size: 2.4vw !important; /* Use viewport-relative font size so it perfectly scales down on narrow phones */
+    letter-spacing: -0.4px !important;
     text-align: center !important;
+    white-space: nowrap !important;
   }
 
   .image-wrapper {
