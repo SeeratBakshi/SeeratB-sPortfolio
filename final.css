@@ -856,23 +856,24 @@ body.slide-wrapper {
 
   /* Outer circle TAP buttons inside UI/UX previews */
   .outer-circle {
-    width: 64px !important;
-    height: 64px !important;
+    width: 44px !important;
+    height: 44px !important;
     border-width: 2px !important;
   }
 
   .click-text {
-    font-size: 13px !important;
+    font-size: 10px !important;
   }
 
   .orbiting-circle {
-    width: 6px !important;
-    height: 6px !important;
-    top: -3px !important;
+    width: 4px !important;
+    height: 4px !important;
+    top: -2px !important;
   }
 
   .circle-button-wrapper {
-    bottom: 10% !important;
+    bottom: 5% !important;
+    left: 85% !important;
   }
   
   #paytm-link {
@@ -893,7 +894,7 @@ body.slide-wrapper {
 
 @media screen and (max-width: 768px) {
   #about .responsive-img-container, #cnt .responsive-img-container {
-    top: -22%; /* <-- Edit this to move the images (and text) UP or DOWN ONLY on mobile */
+    top: -24%; /* <-- Edit this to move the images (and text) UP or DOWN ONLY on mobile */
   }
   .about-img, .cnt-img {
     top: 0;
@@ -908,12 +909,17 @@ body.slide-wrapper {
   .tab {
     flex: 1 !important;
     min-width: 0 !important;
-    padding: 6px 1px !important;
+    padding: 4px 1px !important;
     margin-right: 0 !important;
-    font-size: 2.4vw !important; /* Use viewport-relative font size so it perfectly scales down on narrow phones */
-    letter-spacing: -0.4px !important;
+    font-size: 10px !important;
+    letter-spacing: -0.5px !important;
     text-align: center !important;
-    white-space: nowrap !important;
+    white-space: normal !important; /* Allow long names like Front End Dev to wrap */
+    line-height: 1.1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    -webkit-text-size-adjust: none !important;
   }
 
   .image-wrapper {
