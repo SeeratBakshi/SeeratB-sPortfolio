@@ -253,8 +253,10 @@
 
 
         viewer.scrollTop = 0;
-        connector.style.visibility = "hidden";
-        document.querySelector(".tab.active").style.visibility = "hidden";
+        if (window.innerWidth > 1024) {
+          connector.style.visibility = "hidden";
+          document.querySelector(".tab.active").style.visibility = "hidden";
+        }
       });
     });
 
@@ -282,7 +284,10 @@
         uiuxImg.src = imgPath;
         uiuxViewer.classList.remove("hidden");
         uiuxViewer.scrollTop = 0;
-        uiuxViewer.scrollTop = 0;
+        if (window.innerWidth > 1024) {
+          connector.style.visibility = "hidden";
+          document.querySelector(".tab.active").style.visibility = "hidden";
+        }
 
         if (imgPath.includes("mayb")) {
           maybellineLink.style.display = "block";
@@ -301,7 +306,8 @@
       uiuxClose.addEventListener("click", () => {
         uiuxViewer.classList.add("hidden");
         uiuxImg.src = "";
-        uiuxImg.src = "";
+        connector.style.visibility = "visible";
+        document.querySelector(".tab.active").style.visibility = "visible";
         maybellineLink.style.display = "none";
         paytmLink.style.display = "none";
       });
@@ -320,7 +326,11 @@
         frtImg.src = imgPath;
         frtViewer.classList.remove("hidden");
 
-        // Visibility of tabs no longer needs to be toggled since overlay is fixed
+        if (window.innerWidth > 1024) {
+          if (connector) connector.style.visibility = "hidden";
+          const activeTab = document.querySelector(".tab.active");
+          if (activeTab) activeTab.style.visibility = "hidden";
+        }
       });
     });
 
@@ -329,7 +339,9 @@
         frtViewer.classList.add("hidden");
         frtImg.src = "";
 
-        // Visibility of tabs no longer needs to be toggled
+        if (connector) connector.style.visibility = "visible";
+        const activeTab = document.querySelector(".tab.active");
+        if (activeTab) activeTab.style.visibility = "visible";
       });
     }
 

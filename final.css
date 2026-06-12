@@ -829,12 +829,19 @@ body.slide-wrapper {
 
   /* Image Viewer overlay styles */
   .image-viewer {
+    position: absolute !important;
     width: 100% !important;
     height: 100% !important;
     top: 0 !important;
     left: 0 !important;
     transform: none !important;
     border-width: 0px !important;
+    border-radius: 0 0 10px 10px !important;
+  }
+
+  .modal-content-wrapper {
+    width: 100% !important;
+    height: 100% !important;
     border-radius: 0 0 10px 10px !important;
   }
 
