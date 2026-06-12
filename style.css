@@ -19,12 +19,25 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.main-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: calc(100vh * 1.7481);
+  max-height: calc(100vw / 1.7481);
+  aspect-ratio: 1888 / 1080;
 }
 
 .main-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
 }
 
@@ -65,7 +78,7 @@ body {
 .sunflower-rotate {
   position: absolute;
   top: 48%;
-  left: 15%;
+  left: 12%;
   width: 8%;
   transition: transform 0.6s ease-in-out;
   z-index: 5;
@@ -188,16 +201,16 @@ body {
   margin: 20px auto 0;
 }
 
-@media screen and (max-width: 1024px) {
-
-  .main-wrapper,
-  #video-screen,
-  #fade-dark,
-  #final-container {
-    display: none !important;
+@media screen and (max-width: 768px) {
+  .rainbow-left {
+    display: block !important;
+    width: 11vw;
+    top: 5%;
   }
-
-  .mobile-fallback {
-    display: flex;
+  
+  .flower-right {
+    display: block !important;
+    width: 11vw;
+    top: 12%;
   }
 }

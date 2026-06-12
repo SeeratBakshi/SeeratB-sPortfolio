@@ -6,7 +6,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #eeeeee;
+  background: #000000;
   overflow: hidden;
   font-size: large;
 }
@@ -24,6 +24,11 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   font-size: 0.9em;
   line-height: 1.4;
+  
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: bodySlideFade 1s ease forwards;
+  animation-delay: 0.3s;
 }
 
 .tab-wrapper {
@@ -149,13 +154,18 @@ body {
   height: 100%;
   overflow: hidden;
   border-radius: 0 0 6px 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-img {
   width: 98%;
   height: 92%;
-  object-fit: cover;
+  object-fit: contain !important;
   display: block;
+  position: relative;
+  top: 0;
 }
 
 
@@ -511,17 +521,19 @@ body {
   height: 100%;
   overflow: hidden;
   border-radius: 0 0 6px 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cnt-img {
   width: 98%;
   height: 92%;
-  object-fit: cover;
+  object-fit: contain !important;
   display: block;
 
   position: relative;
   top: 0%;
-
 }
 
 #frt {
@@ -599,12 +611,13 @@ body {
 
 .contact-links {
   position: absolute;
-  top: 64.5%;
-  left: 18%;
+  top: 69.8%;           /* <-- Edit this to move all text UP or DOWN */
+  left: 18%;          /* <-- Edit this to move all text LEFT or RIGHT */
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 34px;
+  justify-content: space-between;
+  height: 35.8%;        /* <-- Edit this to change the vertical gap between lines */
 }
 
 .link-item {
@@ -624,14 +637,12 @@ body {
   text-decoration: underline;
 }
 
-/* Responsive tweak (optional) */
-/* @media (max-width: 768px) {
-  .contact-links {
-    left: 10%;
-    gap: 45px;
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .link-item {
     font-size: 14px;
   }
-} */
+}
 
 #big-image {
   width: 100%;
@@ -644,16 +655,12 @@ body {
 }
 
 body.slide-wrapper {
+  background-color: black;
   background-image: url("Elements/Portfolio dark.png");
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   overflow-x: hidden;
-
-  opacity: 0;
-  transform: translateY(-30px);
-  animation: bodySlideFade 1s ease forwards;
-  animation-delay: 0.3s;
 }
 
 
@@ -726,17 +733,190 @@ body.slide-wrapper {
   margin: 20px auto 0;
 }
 
+.responsive-img-container {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 1889 / 913;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.responsive-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  display: block;
+}
+
 @media screen and (max-width: 1024px) {
   body.slide-wrapper {
-    background-image: none !important;
-    background: #fff8ee !important;
+    background-color: black !important;
+    background-image: url("Elements/Portfolio dark.png") !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
   }
 
   .main-box {
-    display: none !important;
+    width: 96vw !important;
+    height: 92vh !important;
+    max-height: 94vh !important;
+    margin: auto !important;
+  }
+
+  .tab-content {
+    height: calc(100% - 70px) !important;
+    min-height: auto !important;
+  }
+
+  /* Make tab bar scrollable horizontally */
+  .tab-wrapper {
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    scrollbar-width: none !important; /* Hide scrollbar Firefox */
+    -ms-overflow-style: none !important;  /* Hide scrollbar IE/Edge */
+    display: flex !important;
+    padding-bottom: 2px !important;
+  }
+  
+  .tab-wrapper::-webkit-scrollbar {
+    display: none !important; /* Hide scrollbar Safari/Chrome */
+  }
+
+  .tab {
+    min-width: auto !important;
+    padding: 6px 14px !important;
+    font-size: 13px !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+  }
+
+  /* Scale folder grids */
+  .folder-grid {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin-top: 20px !important;
+    gap: 30px 40px !important; /* Row gap and Column gap */
+    justify-content: center !important;
+    width: 100% !important;
+    padding: 10px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, auto) !important;
+  }
+
+  .folder-item {
+    width: 110px !important;
+  }
+
+  .folder-item img {
+    width: 100px !important;
+    height: auto !important;
+  }
+
+  .label {
+    font-size: 13px !important;
+    margin-top: 8px !important;
+    margin-left: 0 !important;
+  }
+
+  .first-label {
+    margin-left: 0 !important;
+  }
+
+  /* Image Viewer overlay styles */
+  .image-viewer {
+    width: 94vw !important;
+    height: 94vh !important;
+    border-width: 3px !important;
+  }
+
+  .close-button, #uiux-close, #frontend-close {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    width: 36px !important;
+    height: 36px !important;
+    background: #fc8879 !important;
+    color: white !important;
+    border: 2px solid black !important;
+    border-radius: 50% !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    z-index: 1000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+  }
+
+  /* Outer circle TAP buttons inside UI/UX previews */
+  .outer-circle {
+    width: 64px !important;
+    height: 64px !important;
+    border-width: 2px !important;
+  }
+
+  .click-text {
+    font-size: 13px !important;
+  }
+
+  .orbiting-circle {
+    width: 6px !important;
+    height: 6px !important;
+    top: -3px !important;
+  }
+
+  .circle-button-wrapper {
+    bottom: 10% !important;
+  }
+  
+  #paytm-link {
+    bottom: 22% !important;
+    left: 88% !important;
+  }
+
+  /* Contact page links responsive adjustments removed to allow percentage scaling */
+
+  .link-item {
+    font-size: 11px !important;
   }
 
   .mobile-fallback {
-    display: flex;
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #about .responsive-img-container, #cnt .responsive-img-container {
+    top: -18%; /* <-- Edit this to move the images (and text) UP or DOWN ONLY on mobile */
+  }
+  .about-img, .cnt-img {
+    top: 0;
+  }
+
+  .tab-wrapper {
+    padding: 6px 4px 0 4px !important;
+    gap: 4px !important;
+    display: flex !important;
+  }
+
+  .tab {
+    flex: 1 !important;
+    min-width: 0 !important;
+    padding: 6px 2px !important;
+    margin-right: 0 !important;
+    font-size: 10.5px !important;
+    letter-spacing: -0.3px !important;
+    text-align: center !important;
+  }
+
+  .image-wrapper {
+    width: 100% !important;
+    height: 100% !important;
   }
 }

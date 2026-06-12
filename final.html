@@ -38,22 +38,26 @@
     <div class="tab-content">
       <div class="content active" id="about">
         <div class="image-wrapper">
-          <img src="About meee.png" alt="About Me" class="about-img" />
+          <div class="responsive-img-container">
+            <img src="About meee.png" alt="About Me" class="about-img" />
+          </div>
         </div>
       </div>
 
 
-      <div class="content active" id="cnt">
+      <div class="content" id="cnt">
         <div class="image-wrapper">
-          <img src="Contactt2.png" alt="About Me" class="cnt-img" />
+          <div class="responsive-img-container">
+            <img src="Contactt2.png" alt="Contact Me" class="cnt-img" />
 
-          <div class="contact-links">
-            <div class="link-item email"> seeratbakshii@gmail.com </div>
-            <div class="link-item behance">
-              <a href="https://www.behance.net/seeratbakshi" target="_blank"> Behance </a>
-            </div>
-            <div class="link-item linkedin">
-              <a href="https://www.linkedin.com/in/seerat-bakshi-5bb60826b/" target="_blank"> LinkedIn </a>
+            <div class="contact-links">
+              <div class="link-item email"> seeratbakshii@gmail.com </div>
+              <div class="link-item behance">
+                <a href="https://www.behance.net/seeratbakshi" target="_blank"> Behance </a>
+              </div>
+              <div class="link-item linkedin">
+                <a href="https://www.linkedin.com/in/seerat-bakshi-5bb60826b/" target="_blank"> LinkedIn </a>
+              </div>
             </div>
           </div>
 
@@ -105,29 +109,29 @@
           <div class="modal-content-wrapper">
             <div class="img-circle-container">
               <img id="uiux-big-image" src="" alt="Preview" class="preview-image" />
-            </div>
 
-            <div class="circle-button-wrapper" id="maybelline-link">
-              <a href="https://www.behance.net/gallery/227857249/Maybelline-Website-Application-Redesign"
-                class="circle-button">
-                <div class="outer-circle">
-                  <span class="click-text">TAP</span>
-                  <div class="orbit-container">
-                    <div class="orbiting-circle"></div>
+              <div class="circle-button-wrapper" id="maybelline-link">
+                <a href="https://www.behance.net/gallery/227857249/Maybelline-Website-Application-Redesign"
+                  class="circle-button">
+                  <div class="outer-circle">
+                    <span class="click-text">TAP</span>
+                    <div class="orbit-container">
+                      <div class="orbiting-circle"></div>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </div>
+                </a>
+              </div>
 
-            <div class="circle-button-wrapper" id="paytm-link" style="bottom: 22%; left: 88%; display: none;">
-              <a href="https://www.behance.net/gallery/227844621/Paytm-Rebranding" class="circle-button">
-                <div class="outer-circle" style="background-color: white;">
-                  <span class="click-text">TAP</span>
-                  <div class="orbit-container">
-                    <div class="orbiting-circle"></div>
+              <div class="circle-button-wrapper" id="paytm-link" style="bottom: 22%; left: 88%; display: none;">
+                <a href="https://www.behance.net/gallery/227844621/Paytm-Rebranding" class="circle-button">
+                  <div class="outer-circle" style="background-color: white;">
+                    <span class="click-text">TAP</span>
+                    <div class="orbit-container">
+                      <div class="orbiting-circle"></div>
+                    </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -223,6 +227,14 @@
     window.onload = () => {
       const activeTab = document.querySelector('.tab.active');
       if (activeTab) updateConnectorCut(activeTab);
+
+      const tabWrapper = document.querySelector('.tab-wrapper');
+      if (tabWrapper) {
+        tabWrapper.addEventListener('scroll', () => {
+          const currentActiveTab = document.querySelector('.tab.active');
+          if (currentActiveTab) updateConnectorCut(currentActiveTab);
+        });
+      }
     };
 
     const folders = document.querySelectorAll(".folder-item");

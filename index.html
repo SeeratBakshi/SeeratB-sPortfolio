@@ -24,23 +24,25 @@
 
 
   <div class="main-wrapper">
-    <img src="Elements\static2.gif" class="main-img" alt="portfolio design" />
+    <div class="main-container">
+      <img src="Elements\static2.gif" class="main-img" alt="portfolio design" />
 
-    <!-- <div class="window-controls">
-      <img src="Elements/minimise.png" class="control-btn" alt="" id="mini">
-      <img src="Elements/fullscreen.png" class="control-btn" alt="">
-      <img src="Elements/close.png" class="control-btn" alt="">
-    </div>
+      <!-- <div class="window-controls">
+        <img src="Elements/minimise.png" class="control-btn" alt="" id="mini">
+        <img src="Elements/fullscreen.png" class="control-btn" alt="">
+        <img src="Elements/close.png" class="control-btn" alt="">
+      </div>
 
-    <div class="popup-controls">
-      <img src="Elements/close.png" class="popup-close" alt="">
-    </div> -->
+      <div class="popup-controls">
+        <img src="Elements/close.png" class="popup-close" alt="">
+      </div> -->
 
-    <img src="Elements/sunflower.png" alt="Sunflower" class="sunflower-rotate" />
-    <img src="Elements/yes.png" class="yes-button" onclick="goToNextPage()" />
+      <img src="Elements/sunflower.png" alt="Sunflower" class="sunflower-rotate" />
+      <img src="Elements/yes.png" class="yes-button" onclick="goToNextPage()" />
 
-    <div class="nope-wrapper">
-      <img src="Elements/nope.png" class="nope-button" />
+      <div class="nope-wrapper">
+        <img src="Elements/nope.png" class="nope-button" />
+      </div>
     </div>
 
     <img src="Elements/rainbow.png" alt="Rainbow" class="rainbow-left" />
@@ -50,7 +52,7 @@
   <div id="video-screen"
     style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: black; z-index: 9998;">
     <video id="transition-video" src="Elements/transition.mov" autoplay muted playsinline
-      style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: 9999;"></video>
+      style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: contain; z-index: 9999;"></video>
   </div>
 
 
@@ -89,8 +91,9 @@
         darkOverlay.style.left = '0';
         darkOverlay.style.width = '100vw';
         darkOverlay.style.height = '100vh';
+        darkOverlay.style.backgroundColor = 'black';
         darkOverlay.style.backgroundImage = "url('Elements/Portfolio dark.png')";
-        darkOverlay.style.backgroundSize = 'cover';
+        darkOverlay.style.backgroundSize = 'contain';
         darkOverlay.style.backgroundPosition = 'center';
         darkOverlay.style.backgroundRepeat = 'no-repeat';
         darkOverlay.style.opacity = '0';
@@ -107,7 +110,7 @@
         // Step 2: After fade completes, redirect to final.html
         setTimeout(() => {
           window.location.href = 'final.html';
-        }, 200); // 1s fade-in + 0.2s buffer
+        }, 1100); // wait for 1s fade-in before navigating
       };
     });
   </script>
