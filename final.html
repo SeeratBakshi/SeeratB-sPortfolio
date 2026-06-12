@@ -253,10 +253,8 @@
 
 
         viewer.scrollTop = 0;
-        if (window.innerWidth > 1024) {
-          connector.style.visibility = "hidden";
-          document.querySelector(".tab.active").style.visibility = "hidden";
-        }
+        connector.style.visibility = "hidden";
+        document.querySelector(".tab.active").style.visibility = "hidden";
       });
     });
 
@@ -326,11 +324,9 @@
         frtImg.src = imgPath;
         frtViewer.classList.remove("hidden");
 
-        if (window.innerWidth > 1024) {
-          if (connector) connector.style.visibility = "hidden";
-          const activeTab = document.querySelector(".tab.active");
-          if (activeTab) activeTab.style.visibility = "hidden";
-        }
+        if (connector) connector.style.visibility = "hidden";
+        const activeTab = document.querySelector(".tab.active");
+        if (activeTab) activeTab.style.visibility = "hidden";
       });
     });
 
