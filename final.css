@@ -829,14 +829,17 @@ body.slide-wrapper {
 
   /* Image Viewer overlay styles */
   .image-viewer {
-    width: 94vw !important;
-    height: 94vh !important;
-    border-width: 3px !important;
+    width: 90vw !important;
+    height: 90vh !important;
+    border-width: 4px !important;
   }
 
   .scroll-img-container {
-    padding-top: 40px !important;
-    padding-bottom: 60px !important;
+    padding: 40px 16px 60px 16px !important;
+  }
+
+  .scroll-img-container img {
+    border-radius: 8px !important;
   }
 
   #uiux-preview {
