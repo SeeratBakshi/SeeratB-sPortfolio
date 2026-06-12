@@ -919,7 +919,7 @@ body.slide-wrapper {
 
 @media screen and (max-width: 768px) {
   #about .responsive-img-container, #cnt .responsive-img-container {
-    top: -24%; /* <-- Edit this to move the images (and text) UP or DOWN ONLY on mobile */
+    top: -28%; /* <-- Edit this to move the images (and text) UP or DOWN ONLY on mobile */
   }
   .about-img, .cnt-img {
     top: 0;
