@@ -6,7 +6,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000000;
+  background: #eeeeee;
   overflow: hidden;
   font-size: large;
 }
@@ -162,7 +162,7 @@ body {
 .about-img {
   width: 98%;
   height: 92%;
-  object-fit: contain !important;
+  object-fit: cover;
   display: block;
   position: relative;
   top: 0;
@@ -529,7 +529,7 @@ body {
 .cnt-img {
   width: 98%;
   height: 92%;
-  object-fit: contain !important;
+  object-fit: cover;
   display: block;
 
   position: relative;
@@ -611,13 +611,12 @@ body {
 
 .contact-links {
   position: absolute;
-  top: 69.8%;           /* <-- Edit this to move all text UP or DOWN */
-  left: 18%;          /* <-- Edit this to move all text LEFT or RIGHT */
+  top: 64.5%;
+  left: 18%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 35.8%;        /* <-- Edit this to change the vertical gap between lines */
+  gap: 34px;
 }
 
 .link-item {
@@ -655,9 +654,8 @@ body {
 }
 
 body.slide-wrapper {
-  background-color: black;
   background-image: url("Elements/Portfolio dark.png");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow-x: hidden;
@@ -752,6 +750,21 @@ body.slide-wrapper {
 }
 
 @media screen and (max-width: 1024px) {
+  body {
+    background: #000000 !important;
+  }
+  
+  .about-img, .cnt-img {
+    object-fit: contain !important;
+  }
+  
+  .contact-links {
+    top: 69.8% !important;
+    justify-content: space-between !important;
+    height: 35.8% !important;
+    gap: normal !important;
+  }
+
   body.slide-wrapper {
     background-color: black !important;
     background-image: url("Elements/Portfolio dark.png") !important;
@@ -918,6 +931,8 @@ body.slide-wrapper {
 }
 
 @media screen and (max-width: 768px) {
+  .mobile-break { display: inline !important; }
+  
   #about .responsive-img-container, #cnt .responsive-img-container {
     top: -28%; /* <-- Edit this to move the images (and text) UP or DOWN ONLY on mobile */
   }
