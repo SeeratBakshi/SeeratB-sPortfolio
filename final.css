@@ -660,7 +660,7 @@ body {
 
 body.slide-wrapper {
   background-image: url("Elements/Portfolio dark.png");
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   overflow-x: hidden;
@@ -752,7 +752,7 @@ body.slide-wrapper {
   
   .contact-links {
     /* To move the text block UP or DOWN on MOBILE ONLY, change this percentage */
-    top: 69% !important;
+    top: 70% !important;
   }
   
   .about-img, .cnt-img {
@@ -772,7 +772,7 @@ body.slide-wrapper {
   body.slide-wrapper {
     background-color: black !important;
     background-image: url("Elements/Portfolio dark.png") !important;
-    background-size: contain !important;
+    background-size: 100% 100% !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
   }
