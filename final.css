@@ -616,8 +616,10 @@ body {
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 34px;
+  gap: clamp(8px, 2.8vw, 34px);
 }
+
+.mobile-break { display: none; }
 
 .link-item {
   font-size: 26px;
@@ -755,13 +757,6 @@ body.slide-wrapper {
   
   .about-img, .cnt-img {
     object-fit: contain !important;
-  }
-  
-  .contact-links {
-    top: 69.8% !important;
-    justify-content: space-between !important;
-    height: 35.8% !important;
-    gap: normal !important;
   }
 
   body.slide-wrapper {
