@@ -611,11 +611,14 @@ body {
 
 .contact-links {
   position: absolute;
+  /* To move the text block UP or DOWN on DESKTOP, change this percentage (currently 64.5%) */
   top: 64.5%;
+  /* To move the text block LEFT or RIGHT on DESKTOP, change this percentage (currently 18%) */
   left: 18%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
+  /* To change the gap between lines, change this clamp value */
   gap: clamp(8px, 2.8vw, 34px);
 }
 
@@ -745,6 +748,11 @@ body.slide-wrapper {
     width: 100% !important;
     height: auto !important;
     display: block !important;
+  }
+  
+  .contact-links {
+    /* To move the text block UP or DOWN on MOBILE ONLY, change this percentage */
+    top: 66.5% !important;
   }
   
   .about-img, .cnt-img {
