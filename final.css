@@ -742,13 +742,15 @@ body.slide-wrapper {
 @media screen and (max-width: 1024px) {
   .responsive-img-container {
     position: relative !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    aspect-ratio: 1889 / 913 !important;
-    margin: auto !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+  
+  .about-img, .cnt-img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
   }
   
   body {
