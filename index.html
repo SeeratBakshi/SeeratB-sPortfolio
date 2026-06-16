@@ -8,7 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Fira+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
+  <style>
+    #transition-video {
+      object-fit: fill;
+    }
+    @media screen and (max-width: 1024px) {
+      #transition-video {
+        object-fit: cover !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -52,7 +62,7 @@
   <div id="video-screen"
     style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: transparent; z-index: 9998;">
     <video id="transition-video" src="Elements/transition.mov" autoplay muted playsinline
-      style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: fill; z-index: 9999;"></video>
+      style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999;"></video>
   </div>
 
 
@@ -93,7 +103,13 @@
         darkOverlay.style.height = '100vh';
         darkOverlay.style.backgroundColor = 'black';
         darkOverlay.style.backgroundImage = "url('Elements/Portfolio dark.png')";
-        darkOverlay.style.backgroundSize = '100% 100%';
+        
+        if (window.innerWidth <= 1024) {
+          darkOverlay.style.backgroundSize = 'contain';
+        } else {
+          darkOverlay.style.backgroundSize = '100% 100%';
+        }
+        
         darkOverlay.style.backgroundPosition = 'center';
         darkOverlay.style.backgroundRepeat = 'no-repeat';
         darkOverlay.style.opacity = '0';
